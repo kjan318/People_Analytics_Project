@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Base Theme --- */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Gradient Background --- */
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(
+        135deg,
+        #0c0c0c 0%,
+        #1a1a2e 15%,
+        #16213e 35%,
+        #0f3460 50%,
+        #533a7d 70%,
+        #8b5a8c 85%,
+        #a0616a 100%
+    );
+    color: #ffffff;
+}
+
+/* --- Glass Morphism Effect for Containers --- */
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Sidebar Style --- */
+[data-testid="stSidebar"] {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+[data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] p {
+    color: #ffffff;
+}
+
+/* --- Typography & Elements --- */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+p, .st-emotion-cache-1b2d4lw {
+     color: rgba(255, 255, 255, 0.9);
+}
+
+a {
+    color: #a0c4ff;
+    text-decoration: none;
+}
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+hr {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Expander (Accordion) Style --- */
+[data-testid="stExpander"] {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+[data-testid="stExpander"] summary {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* --- Image Caption --- */
+.st-emotion-cache-1kyxreq {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Code Block --- */
+.stCodeBlock {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
