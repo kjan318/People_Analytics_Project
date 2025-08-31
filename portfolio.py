@@ -5,35 +5,50 @@ import plotly.express as px
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
     page_title="Kieso Jan's Portfolio",
-    page_icon="📊",
+    page_icon="🧊",
     layout="wide",
 )
 
+# --- FUNCTION TO LOAD EXTERNAL CSS ---
+def load_css(file_name):
+    """Loads an external CSS file into the Streamlit app."""
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+# Load the "Glossy-touch" style
+load_css("style.css")
+
+
 # --- SIDEBAR ---
 with st.sidebar:
-    st.title("📬 Contact & Links")
+    st.title("🧊 Contact & Links")
     st.write("Connect with me for collaborations or just a friendly chat about data!")
     st.divider()
     st.markdown(
         """
         - **Email:** [kieso.jan@gmail.com](mailto:kieso.jan@gmail.com)
-        - **LinkedIn:** [linkedin.com/in/yourprofile](www.linkedin.com/in/kieso-jan-688a594)
-        - **GitHub:** [github.com/kjan318](https://kjan318.github.io/Data-INSIGHTS-Lab/)
+        - **LinkedIn:** [linkedin.com/in/kieso-jan](https://www.linkedin.com/in/kieso-jan-688a594)
+        - **GitHub:** [github.com/kjan318](https://github.com/kjan318/Data-INSIGHTS-Lab/)
         """
     )
 
 # --- HERO SECTION ---
-st.title("🚀 John Doe: People Analytics & Data Science")
+st.markdown('<div class="glass">', unsafe_allow_html=True)
+st.title("Kieso Jan: People Analytics & Data Science")
 st.write(
     """
     Welcome to my portfolio! I specialize in transforming complex HR data into actionable, strategic insights. 
     This page showcases my flagship project: a comprehensive People Analytics dashboard built from the ground up.
     """
 )
-st.divider()
+st.markdown('</div>', unsafe_allow_html=True)
 
-# --- PROJECT SHOWCASE ---
+
+# --- PROJECT SHOWCASE in a single glass container ---
+st.markdown('<div class="glass">', unsafe_allow_html=True)
+
 st.header("Featured Project: The People Analytics Dashboard")
+st.divider()
 
 # --- Use columns for a cleaner layout ---
 col1, col2 = st.columns((2, 1))
@@ -63,7 +78,7 @@ with st.expander("📊 Interactive KPI Dashboard"):
         "understand past performance and anticipate future trends. Filters allow for deep dives into specific departments or locations."
     )
 
-with st.expander("🔮 Predictive Turnover Model"):
+with st.expander("🤖 Predictive Turnover Model"):
     st.write(
         "Using a machine learning model (Random Forest Classifier) built with Scikit-learn, the dashboard "
         "scores each active employee on their risk of turnover. This shifts the HR function from reactive to proactive."
@@ -101,11 +116,13 @@ st.markdown(
     - **Google Sheets:** Used as a free, serverless database via its API.
     """
 )
-
+st.divider()
 # --- CHALLENGES & LESSONS ---
 st.subheader("Challenges & Lessons Learned")
 st.write(
     "A key part of this project was overcoming common real-world challenges. The most significant was solving the infamous "
-    "Google API `PermissionError`. This taught me a valuable lesson in cloud security: authentication is not authorization. "
-    "The fix involved treating the Service Account as a user and explicitly sharing the Google Sheet with its unique client email, a crucial step for any developer working with Google's ecosystem."
+    "Google API `PermissionError`. This taught me a valuable lesson in cloud security: **authentication is not authorization**. "
+    "The fix involved treating the Service Account as a 'user' and explicitly sharing the Google Sheet with its unique client email, a crucial step for any developer working with Google's ecosystem."
 )
+
+st.markdown('</div>', unsafe_allow_html=True)
